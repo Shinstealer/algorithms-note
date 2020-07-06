@@ -12,11 +12,7 @@ public class CreateTargetArray {
             list.add(index[i], nums[i]);
         }
 
-        int[] target = new int[nums.length];
-        for (int i = 0; i < index.length; i++) {
-            target[i] = list.get(i);
-        }
-        return target;
+        return list.stream().mapToInt(i -> i).toArray();
     }
 
     public static void main(String[] args) {
