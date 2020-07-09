@@ -7,7 +7,11 @@ public class ToHex {
     public static void main(String[] args) {
         String hex = String.format("%04x", new BigInteger(1,"text".getBytes()));
 
+        String shardId = "shardId-" + String.format("%010x", 2);
+
         System.out.println(hex);
+
+        System.out.println(shardId);
     }
     
 }
