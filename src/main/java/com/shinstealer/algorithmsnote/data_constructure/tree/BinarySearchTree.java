@@ -63,20 +63,18 @@ public class BinarySearchTree {
             }
             // node with two children: Get the inorder successor (smallest
             // in the right subtree)
-            root.key = minValue(root.right);
+            root.key = minValue(root.right).key;
             // Delete the inorder successor
             root.right = deleteRec(root.right, root.key);
         }
         return root;
     }
 
-    int minValue(Node root) {
-        int min = root.key;
+    Node minValue(Node root) {
         while (root.left != null) {
-            min = root.left.key;
             root = root.left;
         }
-        return min;
+        return root;
     }
 
     void inorder() {
